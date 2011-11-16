@@ -62,7 +62,7 @@ fi
 # add the zfssnap role - probably only works on a local system :-(
 user_exists zfssnap
 if [ $? -ne 0 ] ; then
-	/usr/sbin/roleadd -d / -u 51 -c "ZFS Automatic Snapshots role" \
+	/usr/sbin/roleadd -d / -u 59501 -c "ZFS Automatic Snapshots role" \
 	-P "ZFS File System Management" \
 	-A solaris.smf.manage.zfs-auto-snapshot -m zfssnap
 	check_error $? "Unable to create zfssnap role!"
@@ -71,4 +71,3 @@ if [ $? -ne 0 ] ; then
 else
 	echo "zfssnap role already exists."
 fi
-
